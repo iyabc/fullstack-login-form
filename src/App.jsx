@@ -28,7 +28,9 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div
+      className="flex justify-center items-center h-screen"
+      data-testid="app-component">
       <Form
         username={form.username}
         password={form.password}

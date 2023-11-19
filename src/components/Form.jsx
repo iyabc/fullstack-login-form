@@ -1,3 +1,6 @@
+import Button from "./Button";
+import TextInput from "./TextInput";
+
 const Form = ({ username, password, onValuesChange, onFormSubmit }) => {
   const isButtonDisabled = username.length === 0 || password.length === 0;
 
@@ -5,52 +8,25 @@ const Form = ({ username, password, onValuesChange, onFormSubmit }) => {
     <form
       onSubmit={onFormSubmit}
       className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-fit"
-    >
+      data-testid="login-form">
       <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="username"
-        >
-          Username
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        <TextInput
           id="username"
           type="text"
-          placeholder="Username"
-          onChange={onValuesChange}
+          placeholderText="Username"
+          handleValueChanges={onValuesChange}
         />
       </div>
       <div className="mb-6">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="password"
-        >
-          Password
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        <TextInput
           id="password"
           type="password"
-          placeholder="Password"
-          onChange={onValuesChange}
+          placeholderText="Password"
+          handleValueChanges={onValuesChange}
         />
       </div>
       <div className="flex items-center justify-end">
-        <button
-          className={`
-            ${
-              isButtonDisabled
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-700"
-            }
-            text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline
-          `}
-          type="submit"
-          disabled={isButtonDisabled}
-        >
-          Sign In
-        </button>
+        <Button disabled={isButtonDisabled} />
       </div>
     </form>
   );

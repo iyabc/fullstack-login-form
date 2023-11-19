@@ -1,4 +1,0 @@
-- Create a Login Form with Username textbox and password textbox.
-- add a button that is disabled by default
-- the button would be enabled if there is a value in username and password textbox
-- Once you clicked login it will have an alert if the login is successful or not. Use root in username and password as basis.
